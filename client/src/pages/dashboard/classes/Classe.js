@@ -137,7 +137,7 @@ const Classe = ({ setSelectedLink, link }) => {
     rowsPerPage: 5,
     rowsPerPageOptions: [5, 10, 20],
     download: true,
-    print: true,
+    print: false,
     search: true
   };
 

@@ -141,7 +141,7 @@ const Users = ({ setSelectedLink, link }) => {
         overflowX: 'auto',
         rowsPerPageOptions: [5, 10, 20],
         download: true,
-        print: true,
+        print: false,
         search: true,
     };
 

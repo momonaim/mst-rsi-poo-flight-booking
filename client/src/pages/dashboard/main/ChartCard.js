@@ -6,7 +6,6 @@ import { Doughnut } from 'react-chartjs-2';
 
 const ChartCard = ({ chartType, startDate, endDate }) => {
 
-    const [reservations, setReservations] = useState([]);
     const [billets, setBillets] = useState([]);
     const [filteredReservations, setFilteredReservations] = useState([]);
 
@@ -15,7 +14,6 @@ const ChartCard = ({ chartType, startDate, endDate }) => {
         const loadData = async () => {
             await Promise.all([
                 axios.get(`http://localhost:8080/reservations`).then((response) => {
-                    setReservations(response.data);
                     setFilteredReservations(response.data);
                 }),
                 axios.get(`http://localhost:8080/billets`).then((response) => {
@@ -53,7 +51,7 @@ const ChartCard = ({ chartType, startDate, endDate }) => {
                 data: [
                     billets.filter((r) => r.classType === 'Economy').length,
                     billets.filter((r) => r.classType === 'Business').length,
-                    billets.filter((r) => r.classType === 'First').length,
+                    billets.filter((r) => r.classType === 'First Class').length,
                 ], label: "Class Bookings",
 
             },

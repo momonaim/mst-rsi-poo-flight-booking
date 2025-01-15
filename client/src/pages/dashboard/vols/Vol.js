@@ -3,7 +3,6 @@ import MUIDataTable from "mui-datatables";
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import ModeEdit from '@mui/icons-material/Edit';
 import GridDeleteIcon from '@mui/icons-material/Delete';
-import Visibility from '@mui/icons-material/Visibility';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import VolDialog from "./VolDialog";
@@ -73,9 +72,9 @@ const Vol = ({ setSelectedLink, link }) => {
     { name: 'id', label: 'ID' },
     { name: 'dateDepart', label: 'Départ' },
     { name: 'dateArrivee', label: 'Arrivée' },
-    { name: 'ca_dispo', label: 'CA Dispo' },
-    { name: 'ce_dispo', label: 'CE Dispo' },
-    { name: 'cp_dispo', label: 'CP Dispo' },
+    { name: 'ca_dispo', label: 'CA' },
+    { name: 'ce_dispo', label: 'CE' },
+    { name: 'cp_dispo', label: 'CP' },
     //{ name: 'avion.nom', label: 'Avion' },
 
 
@@ -120,13 +119,13 @@ const Vol = ({ setSelectedLink, link }) => {
               >
                 <GridDeleteIcon />
               </IconButton>
-              <IconButton
+              {/* <IconButton
                 color="default"
                 size="small"
-                onClick={() => console.log("Voir vol :", vol)}
+                onClick={() => handleViewOpen(vol)}
               >
                 <Visibility />
-              </IconButton>
+              </IconButton> */}
             </Box>
           );
         },
@@ -143,7 +142,7 @@ const Vol = ({ setSelectedLink, link }) => {
     rowsPerPage: 5,
     rowsPerPageOptions: [5, 10, 20],
     download: true,
-    print: true,
+    print: false,
     search: true
   };
 

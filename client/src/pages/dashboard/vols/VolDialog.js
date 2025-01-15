@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, TextField, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
   const [avions, setAvions] = useState([]);
@@ -72,8 +73,8 @@ const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
       dateArrivee: volState.dateArrivee,
     };
 
-    const apiEndpoint = vol?.id
-      ? `http://localhost:8080/vols/${vol.id}`
+    const apiEndpoint = vol
+      ? `http://localhost:8080/vol/${vol.id}`
       : 'http://localhost:8080/vols/ajoutsi';
 
     const apiMethod = vol?.id ? axios.put : axios.post;
@@ -81,6 +82,7 @@ const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
     apiMethod(apiEndpoint, volData)
       .then((response) => {
         console.log('Vol saved successfully:', response.data);
+        Swal.fire("Saved!", "Vol saved successfully.", "success");
         updateVols(response.data); // Update the list of vols
         onClose(); // Close the dialog
       })
@@ -118,7 +120,7 @@ const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
           }}
           margin="normal"
         />
-        <TextField
+        {/* <TextField
           label="CA Disponible"
           type="number"
           fullWidth
@@ -144,7 +146,7 @@ const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
           onChange={handleChange}
           name="CP_dispo"
           margin="normal"
-        />
+        /> */}
         <FormControl fullWidth margin="normal">
           <InputLabel>Avion</InputLabel>
           <Select
@@ -181,7 +183,7 @@ const VolDialog = ({ open, onClose, vol, updateVols, isEdit }) => {
           Annuler
         </Button>
         <Button onClick={handleSubmit} color="primary">
-          {isEdit ? 'Modifier' : 'Ajouter'}
+          {vol ? 'Modifier' : 'Ajouter'}
         </Button>
       </DialogActions>
     </Dialog>

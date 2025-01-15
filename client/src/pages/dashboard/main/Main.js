@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { Paper, Typography, Box, Button, TextField, Grid } from "@mui/material";
 import SelectActionCard from "./cardiat";
 import MyDoughnutChart from "./dowanat";
 import ChartCard from "./ChartCard";
 
-const Main = () => {
+const Main = ({ setSelectedLink, link }) => {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [tauxOccupation, setTauxOccupation] = useState([]);
@@ -17,6 +17,9 @@ const Main = () => {
             setEndDate(e.target.value);
         }
     };
+    useEffect(() => {
+        setSelectedLink(link);
+    }, [link, setSelectedLink]);
 
     const fetchTauxOccupation = async () => {
         try {

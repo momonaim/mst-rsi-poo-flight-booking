@@ -47,7 +47,7 @@ const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
             Profile
           </MenuItem>
         )}
-        {currentUser?.role.toUpperCase() === 'ADMIN' && (
+        {currentUser?.role === 'ADMIN' && (
           <MenuItem onClick={() => navigate('/dashboard')}>
             <ListItemIcon>
               <Dashboard fontSize="small" />

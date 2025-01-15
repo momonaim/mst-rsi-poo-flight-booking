@@ -40,7 +40,7 @@ const Reservation = ({ setSelectedLink, link }) => {
   const cancelReservation = (id) => {
     Swal.fire({
       title: 'Are you sure?',
-      text: "Once canceled, you cannot recover this reservation!",
+      text: "This will cancel the reservation!!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -206,7 +206,7 @@ const Reservation = ({ setSelectedLink, link }) => {
     selectableRows: "none",
     responsive: "standard",
     download: true,
-    print: true,
+    print: false,
     filter: true,
     search: true,
     viewColumns: true,

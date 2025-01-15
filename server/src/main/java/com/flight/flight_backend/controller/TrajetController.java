@@ -31,15 +31,17 @@ public class TrajetController {
             // Calculate distance using the Haversine formula
             double distance = calculateDistance(departVille.get(), arriveeVille.get());
             String formattedDistance = String.format("%.2f", distance);
+            formattedDistance.replace(",", ".");
 
             double vitesseAvion = 800.0; // en km/h
+            System.out.println(distance + " km" + formattedDistance);
 
             // Calculez la durée en heures
             double dureeHeures = distance / vitesseAvion;
 
             // Convertir la durée en minutes si nécessaire
             double dureeMinutes = dureeHeures * 60;
-            newTrajet.setDistance(Double.parseDouble(formattedDistance));
+            newTrajet.setDistance(distance);
             newTrajet.setDuree(dureeMinutes);
         } else {
             // Handle case where one of the Ville objects is not found

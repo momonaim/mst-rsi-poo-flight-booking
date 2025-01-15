@@ -94,6 +94,9 @@ public class VolController {
 
             // Associer le trajet et l'avion au vol
             vol.setTrajet(trajet);
+            vol.setCA_dispo(avion.getCapacite_CA());
+            vol.setCE_dispo(avion.getCapacite_CE());
+            vol.setCP_dispo(avion.getCapacite_CP());
             vol.setVilleDepart(trajet.getVilleDepart());
             vol.setVilleArrivee(trajet.getVilleArrivee());
             vol.setAvion(avion);

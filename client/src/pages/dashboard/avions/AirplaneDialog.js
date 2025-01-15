@@ -88,7 +88,7 @@ const AirplaneDialog = ({ open, onClose, airplane, updateAirplanes }) => {
                         fullWidth
                         required
                     />
-                    <TextField
+                    {/* <TextField
                         label="Speed (km/h)"
                         name="vitesse"
                         value={formData.vitesse}
@@ -96,7 +96,7 @@ const AirplaneDialog = ({ open, onClose, airplane, updateAirplanes }) => {
                         type="number"
                         fullWidth
                         required
-                    />
+                    /> */}
                     <TextField
                         label="Autonomy (km)"
                         name="autonomie"

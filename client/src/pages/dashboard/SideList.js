@@ -1,10 +1,12 @@
 import {
-  AirplanemodeActive,
   Category,
   ChevronLeft,
+  ConnectingAirports,
   Dashboard,
   EventSeat,
   Flight,
+  FlightClass,
+  FlightTakeoff,
   Logout,
   PeopleAlt,
 } from '@mui/icons-material';
@@ -33,6 +35,7 @@ import Classe from './classes/Classe';
 import Categories from './categories/Categories';
 import Airplane from './avions/Airplane';
 import Vol from './vols/Vol';
+import Trajet from './trajet/Trajet';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -99,6 +102,12 @@ const SideList = ({ open, setOpen }) => {
         component: <Main {...{ setSelectedLink, link: '/dashboard/' }} />,
       },
       {
+        title: 'Trajets',
+        icon: <ConnectingAirports />,
+        link: '/dashboard/trajets',
+        component: <Trajet {...{ setSelectedLink, link: '/dashboard/trajets' }} />,
+      },
+      {
         title: 'Users',
         icon: <PeopleAlt />,
         link: '/dashboard/users',
@@ -124,15 +133,15 @@ const SideList = ({ open, setOpen }) => {
       },
       {
         title: 'Classes',
-        icon: <AirplanemodeActive />,
+        icon: <FlightClass />,
         link: '/dashboard/classes',
         component: <Classe {...{ setSelectedLink, link: '/dashboard/classes' }} />,
       },
       {
         title: 'Vol',
-        icon: <AirplanemodeActive />, // Utilisation de l'icône pour "Classe"
+        icon: <FlightTakeoff />,
         link: '/dashboard/vols',
-        component: <Vol {...{ setSelectedLink, link: '/dashboard/vols' }} />, // Assure-toi que "Classe" est défini
+        component: <Vol {...{ setSelectedLink, link: '/dashboard/vols' }} />,
       },
     ],
     []
