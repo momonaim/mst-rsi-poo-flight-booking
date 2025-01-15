@@ -12,6 +12,90 @@ It also includes an admin module to manage fare categories, extract statistics, 
 
 ---
 
+## Steps to Run the Project
+
+### Prerequisites
+
+1. **Install Node.js and npm** (for the frontend):
+   - Download and install from [Node.js official website](https://nodejs.org/).
+
+2. **Install Java Development Kit (JDK):**
+   - Ensure you have JDK 11 or higher installed.
+
+3. **Install MySQL:**
+   - Set up a MySQL server and create a database for the application.
+
+4. **Install Maven:**
+   - Required for building the Spring Boot backend.
+
+5. **Stripe API Keys:**
+   - Obtain the public and secret keys from the [Stripe dashboard](https://dashboard.stripe.com/).
+
+### Backend Setup (Spring Boot)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/momonaim/mst-rsi-poo-flight-booking.git
+   cd mst-rsi-poo-flight-booking/server
+   ```
+
+2. **Update `application.properties`:**
+   - Navigate to `src/main/resources/application.properties` and update the following:
+     ```properties
+     spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     ```
+
+3. **Build the project:**
+   ```bash
+   mvn clean install
+   ```
+
+4. **Run the backend server:**
+   ```bash
+   mvn spring-boot:run
+   ```
+   `
+   Or use the SpringBoot Extension from VS Code
+   `
+
+### Frontend Setup (React)
+
+1. **Navigate to the client directory:**
+   ```bash
+   cd flight-booking/client
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Update the Stripe public key:**
+   - Open `src/index.js` and replace the placeholder:
+     ```javascript
+     const stripePromise = loadStripe('your_stripe_public_key');
+     ```
+
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+5. **Access the application:**
+   - Open your browser and navigate to `http://localhost:3000`.
+
+### Database Initialization
+
+1. **Run initial scripts:**
+   - Execute the SQL scripts if needed to initialize the database schema and seed data.
+
+2. **Verify database connection:**
+   - Ensure the backend is correctly connected to the MySQL database by checking the logs for successful startup messages.
+
+---
+
 ## Stripe API Key Configuration
 
 To enable payment functionality, update the Stripe API keys in the relevant files.
@@ -63,4 +147,5 @@ Contributions are welcome! If you'd like to participate, feel free to open an is
 
 ---
 
-Thank you for your interest in this flight booking project. 🚀  
+Thank you for your interest in this flight booking project. 🚀
+
