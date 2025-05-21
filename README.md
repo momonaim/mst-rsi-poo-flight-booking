@@ -11,6 +11,12 @@ It also includes an admin module to manage fare categories, extract statistics, 
 - **Statistics:** View charts and reports for data-driven strategic decisions.  
 
 ---
+## Client Preview
+
+https://github.com/user-attachments/assets/387778f9-9b49-48eb-8bef-c9720bbdffc4
+
+
+---
 
 ## Steps to Run the Project
 
