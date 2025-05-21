@@ -15,6 +15,8 @@ It also includes an admin module to manage fare categories, extract statistics, 
 
 https://github.com/user-attachments/assets/387778f9-9b49-48eb-8bef-c9720bbdffc4
 
+## Admin & Concurrence Preview
+you must check the `/Demo` folder
 
 ---
 
